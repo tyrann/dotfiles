@@ -23,9 +23,13 @@ Plugin 'honza/vim-snippets'
 
 " " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
- let g:UltiSnipsExpandTrigger="<c-j>"
- let g:UltiSnipsJumpForwardTrigger="<c-b>"
- let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsExpandTrigger="<c-j>"
+
+" Allow to use enter to trigger Utilsnips expansion
+ let g:UltiSnipsExpandTrigger = "<nop>"
+ inoremap <expr> <CR> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>" : "\<CR>"
+ let g:UltiSnipsJumpForwardTrigger="<tab>"
+ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "
 " " If you want :UltiSnipsEdit to split your window.
 " let g:UltiSnipsEditSplit="vertical"
@@ -89,6 +93,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " new line but stays in normal mode 
 nnoremap <S-CR> O<Esc>
+nnoremap <S-B> O<Esc>
 nmap <CR> o<Esc>
 
 " Maximize GVim on start
