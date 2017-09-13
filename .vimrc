@@ -83,7 +83,7 @@ nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split
 
 set background=dark
 set t_Co=256
-colorscheme molokai
+colorscheme onedark
 
 set number
 set laststatus=2
