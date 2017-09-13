@@ -194,16 +194,31 @@ let g:syntastic_debug = 0
 
 "==========Plugin shortcuts==========
 "
-" tagbar
+"tagbar
 nmap <F2> :TagbarToggle<CR>
 
 
 "-----------------------C - C++--------------------
-" https://github.com/Valloric/YouCompleteMe
-" ./install.sh --clang-completer
+"https://github.com/Valloric/YouCompleteMe
+"./install.sh --clang-completer
 let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_confs/c/.ycm_extra_conf.py"
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_show_diagnostics_ui = 0
 
 nnoremap <F5> :YcmCompleter GoToDefinition<CR>
 nnoremap <F6> :YcmCompleter GoToDeclaration<CR>
+
+"lightline
+let g:lightline = {
+	  \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch','readonly', 'absolutepath', 'modified', 'charvaluehex' ] ]
+      \ },
+	  \ 'component_function': {
+	  \   'gitbranch': 'fugitive#head'
+	  \ },
+      \ 'component': {
+      \   'charvaluehex': '0x%B'
+      \ },
+      \ }
