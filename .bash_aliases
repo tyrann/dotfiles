@@ -19,14 +19,14 @@ alias vup='vagrant up'
 alias vhalt='vagrant halt'
 alias lsa='ls -la'
 
-#Arch alias
+# Arch alias
 alias sx='startx'
 alias firefox='firefox &'
 
-#Git alias
+# Git alias
 alias gitl='git log --oneline --graph --decorate --all'
 
-#Eclipse force light
+# Eclipse force light
 alias eclipse='GTK_THEME=Adwaita:light eclipse'
 
 alias xs='poweroff'
