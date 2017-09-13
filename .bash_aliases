@@ -32,3 +32,6 @@ alias eclipse='GTK_THEME=Adwaita:light eclipse'
 alias xs='poweroff'
 alias ink='inkscape'
 alias p3='python3'
+
+# Vim alias
+alias vrc='vim ~/.vimrc'
