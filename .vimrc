@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
 Bundle 'djoshea/vim-autoread'
+Bundle 'scrooloose/syntastic'    
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
@@ -54,7 +55,6 @@ syntax on
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
-let g:ycm_collect_identifiers_from_tag_files = 1
 let g:ycm_always_populate_location_list = 1
 set completeopt=longest,menu
 
@@ -168,8 +168,9 @@ let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_python_python_exec = 'python3'
 "let g:syntastic_c_compiler_options = "-std=c99 -Wall -Wextra -Wpedantic"
 let g:syntastic_debug = 0
+let b:syntastic_mode="passive"
 nnoremap <F7> :SyntasticCheck<CR> :lopen<CR>
-nnoremap <F8> :lclose<CR>
+nnoremap <F8> :lclose<CR> :SyntasticReset<CR>
 
 " Go to declaration in a new tab
 nnoremap <expr> <F12> ":tab stjump " . expand("<cword>") . "<CR>"
@@ -202,7 +203,9 @@ nmap <F2> :TagbarToggle<CR>
 "https://github.com/Valloric/YouCompleteMe
 "./install.sh --clang-completer
 let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_confs/c/.ycm_extra_conf.py"
-let g:ycm_collect_identifiers_from_tags_files = 1
+
+" Do not uncomment for large tag files
+" let g:ycm_collect_identifiers_from_tags_files = 1 
 let g:ycm_show_diagnostics_ui = 0
 
 nnoremap <F5> :YcmCompleter GoToDefinition<CR>
