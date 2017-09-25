@@ -128,6 +128,9 @@ vnoremap <Down> <Esc>
 vnoremap <PageUp> <Esc>
 vnoremap <PageDown> <Esc>
 
+"Enable mouse scrolling
+set mouse=a
+
 "Various remaping
 
 nnoremap <A-j> :m .+1<CR>==
